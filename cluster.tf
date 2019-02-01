@@ -1,9 +1,9 @@
 variable "cluster_kubernetes_version" {
-  default = "v1.9.7"
+  default = "v1.11.5"
 }
 
 variable "cluster_name" {
-  default = "confluentOKECluster"
+  default = "China-OKECluster"
 }
 
 variable "availability_domain" {
@@ -35,19 +35,19 @@ variable "node_pool_initial_node_labels_value" {
 }
 
 variable "node_pool_kubernetes_version" {
-  default = "v1.9.7"
+  default = "v1.11.5"
 }
 
 variable "node_pool_name" {
-  default = "cfPool"
+  default = "OKEPool"
 }
 
 variable "node_pool_node_image_name" {
-  default = "Oracle-Linux-7.4"
+  default = "Oracle-Linux-7.5"
 }
 
 variable "node_pool_node_shape" {
-  default = "VM.Standard1.1"
+  default = "VM.Standard2.1"
 }
 
 variable "node_pool_quantity_per_subnet" {
