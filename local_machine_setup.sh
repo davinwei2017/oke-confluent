@@ -24,5 +24,5 @@ helm init --upgrade
 
 
 helm repo update
-helm repo add confluentinc https://raw.githubusercontent.com/confluentinc/cp-helm-charts/master
-helm install confluentinc/cp-helm-charts --name my-confluent-oss
+#helm repo add confluentinc https://raw.githubusercontent.com/confluentinc/cp-helm-charts/master
+#helm install confluentinc/cp-helm-charts --name my-confluent-oss
