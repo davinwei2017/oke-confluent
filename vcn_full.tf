@@ -5,13 +5,13 @@ variable "VPC-CIDR" {
 resource "oci_core_virtual_network" "oke_confluent_vcn" {
   cidr_block = "${var.VPC-CIDR}"
   compartment_id = "${var.compartment_ocid}"
-  display_name = "oke_confluent_vcn"
+  display_name = "oke_chinacsr_vcn"
   dns_label = "okecfvcn"
 }
 
 resource "oci_core_internet_gateway" "confluent_internet_gateway" {
     compartment_id = "${var.compartment_ocid}"
-    display_name = "confluent_internet_gateway"
+    display_name = "chinacsr_internet_gateway"
     vcn_id = "${oci_core_virtual_network.oke_confluent_vcn.id}"
 }
 
