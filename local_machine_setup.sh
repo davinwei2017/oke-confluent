@@ -6,7 +6,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 
-
+#sudo yum -y upgrade
 
 mkdir -p $HOME/.kube
 cp $KUBE_CONFIG_FILE_PATH ~/.kube/config
