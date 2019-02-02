@@ -7,7 +7,8 @@ variable "cluster_name" {
 }
 
 variable "availability_domain" {
-  default = 3
+  #default =3 
+  default = 2
 }
 
 variable "cluster_options_add_ons_is_kubernetes_dashboard_enabled" {
@@ -92,7 +93,10 @@ resource "oci_containerengine_node_pool" "cf_node_pool" {
   name               = "${var.node_pool_name}"
   node_image_name    = "${var.node_pool_node_image_name}"
   node_shape         = "${var.node_pool_node_shape}"
-  subnet_ids         = ["${oci_core_subnet.public.0.id}", "${oci_core_subnet.public.1.id}","${oci_core_subnet.public.2.id}"]
+  #for 3 ADs
+  #subnet_ids         = ["${oci_core_subnet.public.0.id}", "${oci_core_subnet.public.1.id}","${oci_core_subnet.public.2.id}"]
+  #for 2 ADs
+  subnet_ids         = ["${oci_core_subnet.public.0.id}", "${oci_core_subnet.public.1.id}"]
 
   #Optional
   initial_node_labels {
