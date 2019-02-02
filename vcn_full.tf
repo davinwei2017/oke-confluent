@@ -152,7 +152,9 @@ resource "oci_core_security_list" "LoadBalancers" {
 ## Publicly Accessable Subnet Setup
 
 resource "oci_core_subnet" "public" {
-  count = "3"
+  #default setting to 3 for 3 ADs
+  #count = "3"
+  count = "2"
   availability_domain = "${lookup(data.oci_identity_availability_domains.ADs.availability_domains[count.index],"name")}"
   cidr_block = "${cidrsubnet(var.VPC-CIDR, 8, count.index)}"
   display_name = "public_${count.index}"
@@ -190,6 +192,3 @@ resource "oci_core_subnet" "lb_subnet_2" {
   dhcp_options_id = "${oci_core_virtual_network.oke_confluent_vcn.default_dhcp_options_id}"
   dns_label = "lbsubnet2"
 }
-
-
-
