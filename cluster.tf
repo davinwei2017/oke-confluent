@@ -1,5 +1,5 @@
 variable "cluster_kubernetes_version" {
-  default = "v1.11.5"
+  default = "v1.12.6"
 }
 
 variable "cluster_name" {
@@ -36,7 +36,7 @@ variable "node_pool_initial_node_labels_value" {
 }
 
 variable "node_pool_kubernetes_version" {
-  default = "v1.11.5"
+  default = "v1.12.6"
 }
 
 variable "node_pool_name" {
